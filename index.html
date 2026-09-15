@@ -28,11 +28,11 @@
         header {
             background: linear-gradient(135deg, #1a1a1a, var(--dark-red));
             border-bottom: 4px solid var(--primary-red);
-            padding: 2rem 1rem;
+            padding: 1.5rem 1rem;
             text-align: center;
         }
         .logo-area h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 900;
             letter-spacing: 2px;
             color: #fff;
@@ -40,9 +40,9 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
         }
         .logo-area p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #ffcdd2;
-            margin-top: 0.5rem;
+            margin-top: 0.3rem;
             font-weight: 600;
         }
         .container {
@@ -51,27 +51,32 @@
             padding: 2rem 1rem;
         }
         .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 3rem 1rem;
             background: var(--card-bg);
             border-radius: 12px;
+            padding: 2rem 1rem;
+            text-align: center;
             margin-bottom: 2rem;
             box-shadow: 0 8px 16px rgba(0,0,0,0.4);
             border: 1px solid #333;
         }
+        .hero img {
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
         .hero h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
             color: #fff;
         }
         .hero p {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--text-gray);
             max-width: 700px;
-            margin-bottom: 2rem;
+            margin: 0 auto 1.5rem auto;
         }
         .whatsapp-btn {
             display: inline-flex;
@@ -108,32 +113,28 @@
         .center-wrapper {
             text-align: center;
         }
-        .services-grid {
+        .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 1.5rem;
             margin-bottom: 3rem;
         }
-        .service-card {
+        .gallery-card {
             background-color: var(--card-bg);
             border-radius: 8px;
-            padding: 1.5rem;
+            overflow: hidden;
             border: 1px solid #333;
             box-shadow: 0 4px 8px rgba(0,0,0,0.3);
             transition: transform 0.2s;
         }
-        .service-card:hover {
+        .gallery-card:hover {
             transform: translateY(-5px);
             border-color: var(--primary-red);
         }
-        .service-card h3 {
-            color: #fff;
-            margin-bottom: 0.8rem;
-            font-size: 1.3rem;
-        }
-        .service-card p {
-            color: var(--text-gray);
-            font-size: 0.95rem;
+        .gallery-card img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
         .info-section {
             background: var(--card-bg);
@@ -169,12 +170,14 @@
     <header>
         <div class="logo-area">
             <h1>ElectroRojas</h1>
-            <p>Servicio Técnico Multimarca • Reparación de Electrodomésticos y Herramientas</p>
+            <p>Servicio Técnico Multimarca • Talagante</p>
         </div>
     </header>
 
     <div class="container">
+        <!-- Sección Principal con banner1 dentro de la carpeta Publicidad -->
         <section class="hero">
+            <img src="Publicidad/banner1.jpg" alt="Servicio Técnico ElectroRojas - Reparación en Talagante">
             <h2>Soluciones Rápidas, Confiables y Garantizadas</h2>
             <p>¿Tu lavadora, estufa o herramienta dejó de funcionar? Traémosla a nuestro local en Talagante. Contamos con diagnóstico profesional, atención personalizada y repuestos variados.</p>
             <a href="https://wa.me/56986496618?text=Hola,%20necesito%20consultar%20por%20una%20reparación" class="whatsapp-btn" target="_blank">
@@ -184,25 +187,19 @@
         </section>
 
         <div class="center-wrapper">
-            <h2 class="section-title">¿Qué Reparamos?</h2>
+            <h2 class="section-title">Especialidades y Servicios</h2>
         </div>
         
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>🔥 Estufas de Todo Tipo</h3>
-                <p>Especialistas en estufas a parafina (Toyotomi, etc.), a gas y estufas eléctricas. Mantención y reparación integral para este invierno.</p>
+        <!-- Galería con banner2, banner3 e imagen1 -->
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img src="Publicidad/banner2.jpg" alt="Reparación de Estufas y Calefactores">
             </div>
-            <div class="service-card">
-                <h3>🧺 Lavadoras y Secadoras</h3>
-                <p>Soluciones efectivas para fallas de centrifugado, carga de agua, problemas eléctricos y mecánicos en todas las marcas.</p>
+            <div class="gallery-card">
+                <img src="Publicidad/banner3.jpg" alt="Servicio Técnico Multimarca ElectroRojas">
             </div>
-            <div class="service-card">
-                <h3>⚡ Artefactos Eléctricos</h3>
-                <p>Microondas, aspiradoras, enceradoras y una amplia gama de electrodomésticos para el hogar y oficina.</p>
-            </div>
-            <div class="service-card">
-                <h3>🛠️ Herramientas Eléctricas</h3>
-                <p>Taladros, esmeriles, sierras y equipos de trabajo. Diagnóstico confiable y repuestos variados.</p>
+            <div class="gallery-card">
+                <img src="Publicidad/banner1.jpg" alt="Servicios de Reparación y Herramientas">
             </div>
         </div>
 
