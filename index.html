@@ -136,10 +136,68 @@
             height: auto;
             display: block;
         }
+        /* Estilo para la galería completa oculta que se despliega */
+        #catalogo-completo {
+            display: none;
+            margin-top: 2rem;
+            border-top: 2px dashed #444;
+            padding-top: 2rem;
+        }
+        .full-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .gallery-item {
+            background-color: #0d0d0d;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #333;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        /* Ajuste mejorado: la foto se ve completa sin recortarse dentro del marco */
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            background-color: #000;
+            display: block;
+            padding: 5px;
+        }
+        .gallery-item .caption {
+            padding: 0.6rem;
+            font-size: 0.85rem;
+            text-align: center;
+            color: var(--text-gray);
+            background-color: var(--card-bg);
+            border-top: 1px solid #222;
+        }
+        .action-btn {
+            display: inline-block;
+            background-color: var(--primary-red);
+            color: #fff;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(211, 47, 47, 0.4);
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.2s;
+        }
+        .action-btn:hover {
+            background-color: var(--dark-red);
+        }
         .info-section {
             background: var(--card-bg);
             border-radius: 8px;
             padding: 2rem;
+            margin-top: 3rem;
             margin-bottom: 2rem;
             border: 1px solid #333;
             display: grid;
@@ -175,11 +233,11 @@
     </header>
 
     <div class="container">
-        <!-- Sección Principal con banner1 dentro de la carpeta Publicidad -->
+        <!-- Sección Principal con banner1 -->
         <section class="hero">
             <img src="Publicidad/banner1.jpg" alt="Servicio Técnico ElectroRojas - Reparación en Talagante">
             <h2>Soluciones Rápidas, Confiables y Garantizadas</h2>
-            <p>¿Tu lavadora, estufa o herramienta dejó de funcionar? Traémosla a nuestro local en Talagante. Contamos con diagnóstico profesional, atención personalizada y repuestos variados.</p>
+            <p>¿Tu lavadora, estufa o herramienta dejó de funcionar? Tráela a nuestro local en Talagante. Contamos con diagnóstico profesional, atención personalizada y repuestos variados.</p>
             <a href="https://wa.me/56986496618?text=Hola,%20necesito%20consultar%20por%20una%20reparación" class="whatsapp-btn" target="_blank">
                 <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01C17.18 3.03 14.69 2 12.04 2zM12.04 20.12c-1.43 0-2.84-.38-4.08-1.09l-.29-.17-3.03.8.81-2.95-.19-.31c-.81-1.3-1.24-2.8-1.24-4.34 0-4.52 3.68-8.2 8.2-8.2s8.2 3.68 8.2 8.2-3.68 8.2-8.2 8.2zm4.51-6.17c-.25-.13-1.47-.73-1.7-.82-.23-.09-.4-.13-.57.13-.17.25-.66.82-.81.99-.15.17-.31.19-.56.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.11-.51.11-.11.25-.31.37-.47.12-.17.16-.28.24-.47.08-.19.04-.36-.02-.5-.06-.13-.57-1.38-.78-1.89-.2-.49-.4-.42-.57-.43l-.49-.01c-.17 0-.45.06-.69.31-.24.25-.92.9-.92 2.2 0 1.3 1.01 2.55 1.15 2.73.14.19 1.98 3.03 4.8 4.25.67.29 1.19.46 1.6.59.67.21 1.28.18 1.76.11.54-.08 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.29z"/></svg>
                 Contáctanos al WhatsApp
@@ -190,7 +248,7 @@
             <h2 class="section-title">Especialidades y Servicios</h2>
         </div>
         
-        <!-- Galería con banner2, banner3 e imagen1 -->
+        <!-- Galería de los 3 banners -->
         <div class="gallery-grid">
             <div class="gallery-card">
                 <img src="Publicidad/banner2.jpg" alt="Reparación de Estufas y Calefactores">
@@ -203,6 +261,139 @@
             </div>
         </div>
 
+        <!-- Sección: ¿Qué artefactos podemos recibir? -->
+        <section class="hero">
+            <h2 style="font-size: 1.8rem; margin-bottom: 0.8rem; color: var(--primary-red);">¿Qué artefactos podemos recibir?</h2>
+            <p style="font-size: 1.05rem; color: var(--text-gray); max-width: 700px; margin: 0 auto 1.5rem auto;">
+                Expertos en la recuperación y reparación de tus equipos. Aquí puedes ver una pequeña muestra de nuestros trabajos recientes en Talagante.
+            </p>
+
+            <!-- Cuadrícula previa con las primeras 4 fotos -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; max-width: 900px; margin: 0 auto 1.5rem auto;">
+                <div style="background-color: #0d0d0d; border-radius: 8px; overflow: hidden; border: 1px solid #333;">
+                    <img src="fotos_de_artefactos/foto_1.jpg" alt="Reparación 1" style="width: 100%; height: 160px; object-fit: contain; background: #000; display: block;">
+                    <div style="padding: 0.8rem; font-size: 0.9rem; color: #fff;">Reparación General</div>
+                </div>
+                <div style="background-color: #0d0d0d; border-radius: 8px; overflow: hidden; border: 1px solid #333;">
+                    <img src="fotos_de_artefactos/foto_2.jpg" alt="Reparación 2" style="width: 100%; height: 160px; object-fit: contain; background: #000; display: block;">
+                    <div style="padding: 0.8rem; font-size: 0.9rem; color: #fff;">Servicio Especializado</div>
+                </div>
+                <div style="background-color: #0d0d0d; border-radius: 8px; overflow: hidden; border: 1px solid #333;">
+                    <img src="fotos_de_artefactos/foto_3.jpg" alt="Reparación 3" style="width: 100%; height: 160px; object-fit: contain; background: #000; display: block;">
+                    <div style="padding: 0.8rem; font-size: 0.9rem; color: #fff;">Equipos y Herramientas</div>
+                </div>
+                <div style="background-color: #0d0d0d; border-radius: 8px; overflow: hidden; border: 1px solid #333;">
+                    <img src="fotos_de_artefactos/foto_4.jpg" alt="Reparación 4" style="width: 100%; height: 160px; object-fit: contain; background: #000; display: block;">
+                    <div style="padding: 0.8rem; font-size: 0.9rem; color: #fff;">Trabajos Garantizados</div>
+                </div>
+            </div>
+
+            <!-- Botón interactivo que despliega el catálogo completo en la misma página -->
+            <button onclick="toggleCatalogo()" class="action-btn" id="btn-catalogo">
+                Ver catálogo completo de reparaciones →
+            </button>
+
+            <!-- CATÁLOGO COMPLETO: Las 90 fotos de la carpeta fotos_de_artefactos -->
+            <div id="catalogo-completo">
+                <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 1rem;">Galería Completa de Trabajos</h3>
+                <p style="color: var(--text-gray); margin-bottom: 1.5rem;">Explore todos nuestros registros de reparaciones recientes.</p>
+                
+                <div class="full-gallery-grid">
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_1.jpg" alt="Artefacto 1"><div class="caption">Artefacto #1</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_2.jpg" alt="Artefacto 2"><div class="caption">Artefacto #2</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_3.jpg" alt="Artefacto 3"><div class="caption">Artefacto #3</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_4.jpg" alt="Artefacto 4"><div class="caption">Artefacto #4</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_5.jpg" alt="Artefacto 5"><div class="caption">Artefacto #5</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_6.jpg" alt="Artefacto 6"><div class="caption">Artefacto #6</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_7.jpg" alt="Artefacto 7"><div class="caption">Artefacto #7</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_8.jpg" alt="Artefacto 8"><div class="caption">Artefacto #8</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_9.jpg" alt="Artefacto 9"><div class="caption">Artefacto #9</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_10.jpg" alt="Artefacto 10"><div class="caption">Artefacto #10</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_11.jpg" alt="Artefacto 11"><div class="caption">Artefacto #11</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_12.jpg" alt="Artefacto 12"><div class="caption">Artefacto #12</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_13.jpg" alt="Artefacto 13"><div class="caption">Artefacto #13</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_14.jpg" alt="Artefacto 14"><div class="caption">Artefacto #14</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_15.jpg" alt="Artefacto 15"><div class="caption">Artefacto #15</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_16.jpg" alt="Artefacto 16"><div class="caption">Artefacto #16</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_17.jpg" alt="Artefacto 17"><div class="caption">Artefacto #17</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_18.jpg" alt="Artefacto 18"><div class="caption">Artefacto #18</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_19.jpg" alt="Artefacto 19"><div class="caption">Artefacto #19</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_20.jpg" alt="Artefacto 20"><div class="caption">Artefacto #20</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_21.jpg" alt="Artefacto 21"><div class="caption">Artefacto #21</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_22.jpg" alt="Artefacto 22"><div class="caption">Artefacto #22</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_23.jpg" alt="Artefacto 23"><div class="caption">Artefacto #23</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_24.jpg" alt="Artefacto 24"><div class="caption">Artefacto #24</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_25.jpg" alt="Artefacto 25"><div class="caption">Artefacto #25</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_26.jpg" alt="Artefacto 26"><div class="caption">Artefacto #26</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_27.jpg" alt="Artefacto 27"><div class="caption">Artefacto #27</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_28.jpg" alt="Artefacto 28"><div class="caption">Artefacto #28</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_29.jpg" alt="Artefacto 29"><div class="caption">Artefacto #29</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_30.jpg" alt="Artefacto 30"><div class="caption">Artefacto #30</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_31.jpg" alt="Artefacto 31"><div class="caption">Artefacto #31</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_32.jpg" alt="Artefacto 32"><div class="caption">Artefacto #32</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_33.jpg" alt="Artefacto 33"><div class="caption">Artefacto #33</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_34.jpg" alt="Artefacto 34"><div class="caption">Artefacto #34</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_35.jpg" alt="Artefacto 35"><div class="caption">Artefacto #35</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_36.jpg" alt="Artefacto 36"><div class="caption">Artefacto #36</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_37.jpg" alt="Artefacto 37"><div class="caption">Artefacto #37</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_38.jpg" alt="Artefacto 38"><div class="caption">Artefacto #38</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_39.jpg" alt="Artefacto 39"><div class="caption">Artefacto #39</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_40.jpg" alt="Artefacto 40"><div class="caption">Artefacto #40</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_41.jpg" alt="Artefacto 41"><div class="caption">Artefacto #41</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_42.jpg" alt="Artefacto 42"><div class="caption">Artefacto #42</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_43.jpg" alt="Artefacto 43"><div class="caption">Artefacto #43</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_44.jpg" alt="Artefacto 44"><div class="caption">Artefacto #44</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_45.jpg" alt="Artefacto 45"><div class="caption">Artefacto #45</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_46.jpg" alt="Artefacto 46"><div class="caption">Artefacto #46</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_47.jpg" alt="Artefacto 47"><div class="caption">Artefacto #47</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_48.jpg" alt="Artefacto 48"><div class="caption">Artefacto #48</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_49.jpg" alt="Artefacto 49"><div class="caption">Artefacto #49</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_50.jpg" alt="Artefacto 50"><div class="caption">Artefacto #50</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_51.jpg" alt="Artefacto 51"><div class="caption">Artefacto #51</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_52.jpg" alt="Artefacto 52"><div class="caption">Artefacto #52</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_53.jpg" alt="Artefacto 53"><div class="caption">Artefacto #53</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_54.jpg" alt="Artefacto 54"><div class="caption">Artefacto #54</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_55.jpg" alt="Artefacto 55"><div class="caption">Artefacto #55</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_56.jpg" alt="Artefacto 56"><div class="caption">Artefacto #56</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_57.jpg" alt="Artefacto 57"><div class="caption">Artefacto #57</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_58.jpg" alt="Artefacto 58"><div class="caption">Artefacto #58</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_59.jpg" alt="Artefacto 59"><div class="caption">Artefacto #59</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_60.jpg" alt="Artefacto 60"><div class="caption">Artefacto #60</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_61.jpg" alt="Artefacto 61"><div class="caption">Artefacto #61</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_62.jpg" alt="Artefacto 62"><div class="caption">Artefacto #62</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_63.jpg" alt="Artefacto 63"><div class="caption">Artefacto #63</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_64.jpg" alt="Artefacto 64"><div class="caption">Artefacto #64</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_65.jpg" alt="Artefacto 65"><div class="caption">Artefacto #65</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_66.jpg" alt="Artefacto 66"><div class="caption">Artefacto #66</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_67.jpg" alt="Artefacto 67"><div class="caption">Artefacto #67</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_68.jpg" alt="Artefacto 68"><div class="caption">Artefacto #68</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_69.jpg" alt="Artefacto 69"><div class="caption">Artefacto #69</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_70.jpg" alt="Artefacto 70"><div class="caption">Artefacto #70</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_71.jpg" alt="Artefacto 71"><div class="caption">Artefacto #71</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_72.jpg" alt="Artefacto 72"><div class="caption">Artefacto #72</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_73.jpg" alt="Artefacto 73"><div class="caption">Artefacto #73</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_74.jpg" alt="Artefacto 74"><div class="caption">Artefacto #74</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_75.jpg" alt="Artefacto 75"><div class="caption">Artefacto #75</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_76.jpg" alt="Artefacto 76"><div class="caption">Artefacto #76</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_77.jpg" alt="Artefacto 77"><div class="caption">Artefacto #77</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_78.jpg" alt="Artefacto 78"><div class="caption">Artefacto #78</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_79.jpg" alt="Artefacto 79"><div class="caption">Artefacto #79</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_80.jpg" alt="Artefacto 80"><div class="caption">Artefacto #80</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_81.jpg" alt="Artefacto 81"><div class="caption">Artefacto #81</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_82.jpg" alt="Artefacto 82"><div class="caption">Artefacto #82</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_83.jpg" alt="Artefacto 83"><div class="caption">Artefacto #83</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_84.jpg" alt="Artefacto 84"><div class="caption">Artefacto #84</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_85.jpg" alt="Artefacto 85"><div class="caption">Artefacto #85</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_86.jpg" alt="Artefacto 86"><div class="caption">Artefacto #86</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_87.jpg" alt="Artefacto 87"><div class="caption">Artefacto #87</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_88.jpg" alt="Artefacto 88"><div class="caption">Artefacto #88</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_89.jpg" alt="Artefacto 89"><div class="caption">Artefacto #89</div></div>
+                    <div class="gallery-item"><img src="fotos_de_artefactos/foto_90.jpg" alt="Artefacto 90"><div class="caption">Artefacto #90</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Información de Ubicación y Contacto -->
         <div class="info-section">
             <div class="info-box">
                 <h3>📍 Ubicación del Local</h3>
@@ -223,5 +414,21 @@
         <p>&copy; 2026 ElectroRojas. Todos los derechos reservados. Servicio Técnico en Talagante.</p>
     </footer>
 
+    <!-- Script pequeño para abrir/cerrar el catálogo en la misma página -->
+    <script>
+        function toggleCatalogo() {
+            var catalogo = document.getElementById("catalogo-completo");
+            var boton = document.getElementById("btn-catalogo");
+            if (catalogo.style.display === "block") {
+                catalogo.style.display = "none";
+                boton.innerHTML = "Ver catálogo completo de reparaciones →";
+                window.scrollTo({top: boton.offsetTop - 100, behavior: 'smooth'});
+            } else {
+                catalogo.style.display = "block";
+                boton.innerHTML = "Ocultar catálogo ↑";
+                window.scrollTo({top: catalogo.offsetTop - 50, behavior: 'smooth'});
+            }
+        }
+    </script>
 </body>
 </html>
